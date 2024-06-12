@@ -8,8 +8,23 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class KafkaMessageListener {
 
-    @KafkaListener(topics = "customerTopic", groupId = "cust-group-1")
-    public void consume(String message) {
-        log.info("consumer consume the message {} ",message);
+    @KafkaListener(topics = "assetTopic", groupId = "asset-group")
+    public void consume1(String message) {
+        log.info("consumer1 consume the item {} ",message);
+    }
+
+    @KafkaListener(topics = "assetTopic", groupId = "asset-group")
+    public void consume2(String message) {
+        log.info("consumer2 consume the item {} ",message);
+    }
+
+    @KafkaListener(topics = "assetTopic", groupId = "asset-group")
+    public void consume3(String message) {
+        log.info("consumer3 consume the item {} ",message);
+    }
+
+    @KafkaListener(topics = "assetTopic", groupId = "asset-group")
+    public void consume4(String message) {
+        log.info("consumer4 consume the item {} ",message);
     }
 }
