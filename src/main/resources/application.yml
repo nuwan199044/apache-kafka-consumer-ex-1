@@ -1,0 +1,21 @@
+topic:
+  name: employeeTopic-avro-1
+
+server:
+  port: 8181
+
+spring:
+  kafka:
+    bootstrap-servers: "127.0.0.1:9092"
+    consumer:
+      group-id: "employee-group-avro"
+      keyDeserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+      valueDeserializer: "io.confluent.kafka.serializers.KafkaAvroDeserializer"
+      autoOffsetReset: "earliest"
+      properties:
+        schema:
+          registry:
+            url: "http://127.0.0.1:8081"
+        specific:
+          avro:
+            reader: "true"

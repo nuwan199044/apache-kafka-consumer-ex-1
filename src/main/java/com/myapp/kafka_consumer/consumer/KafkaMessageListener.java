@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class KafkaMessageListener {
 
-    @KafkaListener(topics = "employeeTopic-avro", groupId = "employee-group-avro")
+    @KafkaListener(topics = "employeeTopic-avro-1", groupId = "employee-group-avro")
     public void consume(ConsumerRecord<String, Employee> consumerRecord) {
         String key = consumerRecord.key();
         Employee value = consumerRecord.value();
