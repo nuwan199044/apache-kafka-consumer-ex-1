@@ -1,4 +1,4 @@
-package com.myapp.kafka_consumer.consumer;
+package com.myapp.consumer;
 
 import com.myapp.dto.Customer;
 import lombok.extern.slf4j.Slf4j;
